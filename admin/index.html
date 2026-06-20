@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Edição — Hilda Teixeira da Costa</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--azul:#2C3E50;--terra:#C0845A;--fundo:#F5F1EC;--borda:#E2DDD7;--cinza:#7F8C8D;--branco:#fff;--r:8px}
+body{font-family:Arial,sans-serif;background:var(--fundo);color:var(--azul);min-height:100vh}
+.topo{background:var(--azul);padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.topo-nome{font-family:Georgia,serif;font-size:18px;color:#F5F1EC;font-weight:400}
+.topo-tag{font-size:11px;color:rgba(245,241,236,.45);letter-spacing:2px;text-transform:uppercase}
+.btn-sair{font-size:12px;color:rgba(245,241,236,.5);background:none;border:1px solid rgba(245,241,236,.15);border-radius:4px;padding:6px 14px;cursor:pointer;transition:all .2s}
+.btn-sair:hover{color:#F5F1EC;border-color:rgba(245,241,236,.4)}
+/* TELAS */
+.tela{display:none;min-height:calc(100vh - 60px);align-items:center;justify-content:center;padding:40px 20px}
+.tela.ativa{display:flex}
+/* CARDS */
+.card{background:var(--branco);border-radius:12px;padding:40px;width:100%;max-width:460px;box-shadow:0 4px 24px rgba(44,62,80,.08)}
+.card-logo{font-family:Georgia,serif;font-size:22px;color:var(--azul);margin-bottom:6px}
+.card-sub{font-size:13px;color:var(--cinza);margin-bottom:32px}
+/* FORM */
+.grupo{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.grupo:last-of-type{margin-bottom:0}
+label{font-size:11px;font-weight:700;color:var(--azul);letter-spacing:.5px;text-transform:uppercase}
+input[type=text],input[type=password],input[type=email],textarea{font-family:Arial,sans-serif;font-size:14px;color:var(--azul);background:var(--fundo);border:1.5px solid var(--borda);border-radius:6px;padding:11px 14px;width:100%;outline:none;transition:border-color .2s}
+input:focus,textarea:focus{border-color:var(--terra);box-shadow:0 0 0 3px rgba(192,132,90,.12)}
+textarea{resize:vertical;line-height:1.6}
+.btn-pri{width:100%;padding:14px;background:var(--terra);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:600;cursor:pointer;margin-top:24px;transition:background .2s}
+.btn-pri:hover{background:#a86f4a}
+.btn-pri:disabled{background:#ccc;cursor:not-allowed}
+.aviso{font-size:12px;color:var(--cinza);margin-top:12px;line-height:1.6}
+.erro{font-size:13px;color:#e74c3c;margin-top:10px;display:none}
+.ok{font-size:13px;color:#27ae60;margin-top:10px;display:none}
+/* DASHBOARD */
+.dash{max-width:820px;margin:0 auto;padding:32px 24px;width:100%}
+.dash-h{font-family:Georgia,serif;font-size:26px;color:var(--azul);margin-bottom:6px}
+.dash-sub{font-size:14px;color:var(--cinza);margin-bottom:32px}
+.secao{background:var(--branco);border-radius:12px;padding:28px 32px;margin-bottom:20px;border:1px solid var(--borda)}
+.secao-titulo{font-size:13px;font-weight:700;color:var(--terra);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--borda)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.btn-pub{padding:14px 32px;background:var(--azul);color:#fff;border:none;border-radius:var(--r);font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;display:flex;align-items:center;gap:10px}
+.btn-pub:hover{background:#1e2d3d}
+.btn-pub:disabled{background:#aaa;cursor:not-allowed}
+.status{font-size:14px;color:var(--cinza);margin-left:16px}
+.rodape-dash{display:flex;align-items:center;margin-top:8px;padding:20px 0}
+.hint{font-size:11px;color:var(--cinza);font-style:italic;margin-top:6px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topo">
+  <div>
+    <div class="topo-nome">Hilda Teixeira da Costa</div>
+    <div class="topo-tag">Painel de edição do site</div>
+  </div>
+  <button class="btn-sair" id="btn-sair" style="display:none" onclick="sair()">Sair</button>
+</div>
+
+<!-- TELA 1: CONFIGURAÇÃO INICIAL -->
+<div class="tela ativa" id="tela-config">
+  <div class="card">
+    <div class="card-logo">Configuração inicial</div>
+    <div class="card-sub">Feita apenas uma vez. Você vai precisar de um Token do GitHub.</div>
+    <div class="grupo">
+      <label>Seu usuário no GitHub</label>
+      <input type="text" id="cfg-usuario" placeholder="ex: hildateixeira">
+    </div>
+    <div class="grupo">
+      <label>Nome do repositório</label>
+      <input type="text" id="cfg-repo" placeholder="ex: site-hilda" value="site-hilda">
+    </div>
+    <div class="grupo">
+      <label>Token do GitHub</label>
+      <input type="password" id="cfg-token" placeholder="ghp_xxxxxxxxxxxx">
+      <div class="hint">Como obter: GitHub → foto do perfil → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → marque "repo" → Generate → copie o token</div>
+    </div>
+    <div class="grupo">
+      <label>Crie uma senha para este painel</label>
+      <input type="password" id="cfg-senha" placeholder="Escolha uma senha">
+    </div>
+    <div class="grupo">
+      <label>Confirme a senha</label>
+      <input type="password" id="cfg-senha2" placeholder="Repita a senha">
+    </div>
+    <div class="erro" id="cfg-erro"></div>
+    <button class="btn-pri" onclick="salvarConfig()">Salvar configuração</button>
+  </div>
+</div>
+
+<!-- TELA 2: LOGIN -->
+<div class="tela" id="tela-login">
+  <div class="card">
+    <div class="card-logo">Entrar no painel</div>
+    <div class="card-sub">Digite a senha que você criou na configuração.</div>
+    <div class="grupo">
+      <label>Senha</label>
+      <input type="password" id="login-senha" placeholder="Sua senha" onkeydown="if(event.key==='Enter')entrar()">
+    </div>
+    <div class="erro" id="login-erro"></div>
+    <button class="btn-pri" onclick="entrar()">Entrar</button>
+    <div class="aviso" style="margin-top:16px">Se esqueceu a senha, <a href="#" onclick="resetarConfig()" style="color:var(--terra)">clique aqui</a> para reconfigurar.</div>
+  </div>
+</div>
+
+<!-- TELA 3: DASHBOARD -->
+<div class="tela" id="tela-dash">
+  <div class="dash">
+    <div class="dash-h">Editar site</div>
+    <div class="dash-sub">Altere os textos abaixo e clique em <strong>Publicar alterações</strong>. O site atualiza em cerca de 1 minuto.</div>
+
+    <div class="secao">
+      <div class="secao-titulo">Informações básicas</div>
+      <div class="grid2">
+        <div class="grupo"><label>Número CRP</label><input type="text" id="f-crp" placeholder="ex: 12345"><div class="hint">Seu registro profissional de psicóloga</div></div>
+        <div class="grupo"><label>E-mail profissional</label><input type="email" id="f-email" placeholder="seu@email.com.br"></div>
+        <div class="grupo"><label>WhatsApp (só números)</label><input type="text" id="f-whatsapp" placeholder="5531999999999"><div class="hint">Código do país + DDD + número, sem espaços</div></div>
+        <div class="grupo"><label>Usuário no Cal.com</label><input type="text" id="f-calcom" placeholder="hildateixeiradacosta"><div class="hint">O nome após cal.com/ no link da sua agenda</div></div>
+      </div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Texto da tela inicial</div>
+      <div class="grupo"><label>Texto de apresentação</label><textarea id="f-hero-pitch" rows="3"></textarea></div>
+      <div class="grupo"><label>Linha de serviços</label><input type="text" id="f-hero-sub"></div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Seção "Sobre"</div>
+      <div class="grupo"><label>Parágrafo 1</label><textarea id="f-s-p1" rows="4"></textarea></div>
+      <div class="grupo"><label>Parágrafo 2</label><textarea id="f-s-p2" rows="4"></textarea></div>
+      <div class="grupo"><label>Parágrafo 3</label><textarea id="f-s-p3" rows="3"></textarea></div>
+      <div class="grupo"><label>Destaque (caixinha lateral)</label><textarea id="f-s-box" rows="3"></textarea></div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Frase de destaque</div>
+      <div class="grupo"><label>Citação da faixa escura</label><textarea id="f-faixa" rows="2"></textarea></div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Atendimento individual</div>
+      <div class="grupo"><label>Título do serviço</label><input type="text" id="f-s1-titulo"></div>
+      <div class="grupo"><label>Descrição</label><textarea id="f-s1-desc" rows="4"></textarea></div>
+      <div class="grupo"><label>Detalhes (linha inferior do card)</label><input type="text" id="f-s1-det"></div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Intervenção organizacional</div>
+      <div class="grupo"><label>Título do serviço</label><input type="text" id="f-s2-titulo"></div>
+      <div class="grupo"><label>Descrição</label><textarea id="f-s2-desc" rows="4"></textarea></div>
+      <div class="grupo"><label>Detalhes (linha inferior do card)</label><input type="text" id="f-s2-det"></div>
+    </div>
+
+    <div class="secao">
+      <div class="secao-titulo">Seção de contato</div>
+      <div class="grupo"><label>Subtítulo da seção</label><textarea id="f-contato-sub" rows="2"></textarea></div>
+    </div>
+
+    <div class="rodape-dash">
+      <button class="btn-pub" id="btn-pub" onclick="publicar()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm3.5 6.5l-4-4a.5.5 0 0 0-.7 0l-4 4a.5.5 0 0 0 .7.7L7 4.7V12a.5.5 0 0 0 1 0V4.7l3.5 2.5a.5.5 0 0 0 .7-.7z"/></svg>
+        Publicar alterações
+      </button>
+      <span class="status" id="status"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+const SALT = 'hilda-painel-2025';
+
+// Crypto hash
+async function hash(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str + SALT));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+// Config storage
+function getCfg() { try { return JSON.parse(localStorage.getItem('hilda_cfg') || 'null'); } catch { return null; } }
+function setCfg(o) { localStorage.setItem('hilda_cfg', JSON.stringify(o)); }
+function isLoggedIn() { return sessionStorage.getItem('hilda_ok') === '1'; }
+
+function mostrar(id) {
+  document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa'));
+  document.getElementById(id).classList.add('ativa');
+}
+
+function init() {
+  const cfg = getCfg();
+  if (!cfg) { mostrar('tela-config'); return; }
+  if (!isLoggedIn()) { mostrar('tela-login'); return; }
+  mostrar('tela-dash');
+  document.getElementById('btn-sair').style.display = 'block';
+  carregarConteudo();
+}
+
+// CONFIGURAÇÃO
+async function salvarConfig() {
+  const usuario = document.getElementById('cfg-usuario').value.trim();
+  const repo = document.getElementById('cfg-repo').value.trim();
+  const token = document.getElementById('cfg-token').value.trim();
+  const senha = document.getElementById('cfg-senha').value;
+  const senha2 = document.getElementById('cfg-senha2').value;
+  const erro = document.getElementById('cfg-erro');
+  erro.style.display = 'none';
+
+  if (!usuario || !repo || !token || !senha) { erro.textContent = 'Preencha todos os campos.'; erro.style.display = 'block'; return; }
+  if (senha !== senha2) { erro.textContent = 'As senhas não coincidem.'; erro.style.display = 'block'; return; }
+  if (token.length < 20) { erro.textContent = 'O token parece inválido. Verifique se copiou corretamente.'; erro.style.display = 'block'; return; }
+
+  // Test token
+  erro.textContent = 'Verificando token...'; erro.style.display = 'block';
+  try {
+    const r = await fetch(`https://api.github.com/repos/${usuario}/${repo}/contents/content.json`, {
+      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (r.status === 404) { erro.textContent = 'Repositório ou arquivo content.json não encontrado. Verifique o usuário e o nome do repositório.'; return; }
+    if (r.status === 401) { erro.textContent = 'Token inválido ou sem permissão. Verifique e tente novamente.'; return; }
+    if (!r.ok) { erro.textContent = 'Erro ao conectar com o GitHub: ' + r.status; return; }
+  } catch(e) { erro.textContent = 'Erro de conexão: ' + e.message; return; }
+
+  const h = await hash(senha);
+  setCfg({ usuario, repo, token, senha_hash: h });
+  sessionStorage.setItem('hilda_ok', '1');
+  erro.style.display = 'none';
+  mostrar('tela-dash');
+  document.getElementById('btn-sair').style.display = 'block';
+  carregarConteudo();
+}
+
+// LOGIN
+async function entrar() {
+  const senha = document.getElementById('login-senha').value;
+  const erro = document.getElementById('login-erro');
+  const cfg = getCfg();
+  if (!senha) { erro.textContent = 'Digite a senha.'; erro.style.display = 'block'; return; }
+  const h = await hash(senha);
+  if (h !== cfg.senha_hash) { erro.textContent = 'Senha incorreta.'; erro.style.display = 'block'; return; }
+  sessionStorage.setItem('hilda_ok', '1');
+  erro.style.display = 'none';
+  mostrar('tela-dash');
+  document.getElementById('btn-sair').style.display = 'block';
+  carregarConteudo();
+}
+
+function sair() {
+  sessionStorage.removeItem('hilda_ok');
+  document.getElementById('btn-sair').style.display = 'none';
+  document.getElementById('login-senha').value = '';
+  mostrar('tela-login');
+}
+
+function resetarConfig() {
+  if (confirm('Isso vai apagar a configuração atual. Você precisará inserir o token e criar nova senha. Continuar?')) {
+    localStorage.removeItem('hilda_cfg');
+    sessionStorage.removeItem('hilda_ok');
+    mostrar('tela-config');
+  }
+}
+
+// CARREGAR CONTEÚDO DO GITHUB
+async function carregarConteudo() {
+  const cfg = getCfg();
+  setStatus('Carregando conteúdo atual…');
+  try {
+    const r = await fetch(`https://api.github.com/repos/${cfg.usuario}/${cfg.repo}/contents/content.json`, {
+      headers: { 'Authorization': `token ${cfg.token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    const data = await r.json();
+    const content = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    preencherFormulario(content);
+    setStatus('Conteúdo carregado ✓');
+    setTimeout(() => setStatus(''), 3000);
+  } catch(e) {
+    setStatus('Erro ao carregar: ' + e.message);
+  }
+}
+
+function preencherFormulario(d) {
+  const s = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined) el.value = v; };
+  s('f-crp', d.crp); s('f-email', d.email); s('f-whatsapp', d.whatsapp); s('f-calcom', d.calcom_username);
+  s('f-hero-pitch', d.hero_pitch); s('f-hero-sub', d.hero_sub);
+  s('f-s-p1', d.sobre_p1); s('f-s-p2', d.sobre_p2); s('f-s-p3', d.sobre_p3); s('f-s-box', d.sobre_box);
+  s('f-faixa', d.faixa_quote);
+  s('f-s1-titulo', d.servico1_titulo); s('f-s1-desc', d.servico1_desc); s('f-s1-det', d.servico1_det);
+  s('f-s2-titulo', d.servico2_titulo); s('f-s2-desc', d.servico2_desc); s('f-s2-det', d.servico2_det);
+  s('f-contato-sub', d.contato_sub);
+}
+
+function lerFormulario() {
+  const g = id => document.getElementById(id).value.trim();
+  return {
+    crp: g('f-crp'), email: g('f-email'), whatsapp: g('f-whatsapp'), calcom_username: g('f-calcom'),
+    hero_pitch: g('f-hero-pitch'), hero_sub: g('f-hero-sub'),
+    sobre_p1: g('f-s-p1'), sobre_p2: g('f-s-p2'), sobre_p3: g('f-s-p3'), sobre_box: g('f-s-box'),
+    faixa_quote: g('f-faixa'),
+    servico1_titulo: g('f-s1-titulo'), servico1_desc: g('f-s1-desc'), servico1_det: g('f-s1-det'),
+    servico2_titulo: g('f-s2-titulo'), servico2_desc: g('f-s2-desc'), servico2_det: g('f-s2-det'),
+    contato_sub: g('f-contato-sub')
+  };
+}
+
+// PUBLICAR
+async function publicar() {
+  const cfg = getCfg();
+  const btn = document.getElementById('btn-pub');
+  btn.disabled = true;
+  setStatus('Publicando…');
+
+  try {
+    // Get current SHA
+    const r1 = await fetch(`https://api.github.com/repos/${cfg.usuario}/${cfg.repo}/contents/content.json`, {
+      headers: { 'Authorization': `token ${cfg.token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!r1.ok) throw new Error('Erro ao ler arquivo: ' + r1.status);
+    const current = await r1.json();
+    const sha = current.sha;
+
+    const content = lerFormulario();
+    const contentStr = JSON.stringify(content, null, 2);
+    const encoded = btoa(unescape(encodeURIComponent(contentStr)));
+
+    const r2 = await fetch(`https://api.github.com/repos/${cfg.usuario}/${cfg.repo}/contents/content.json`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${cfg.token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: 'Atualização de conteúdo via painel',
+        content: encoded,
+        sha: sha
+      })
+    });
+
+    if (!r2.ok) { const err = await r2.json(); throw new Error(err.message); }
+    setStatus('✓ Publicado! O site atualiza em cerca de 1 minuto.');
+  } catch(e) {
+    setStatus('Erro: ' + e.message);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+// Init
+window.addEventListener('load', init);
+</script>
+</body>
+</html>

@@ -234,8 +234,8 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
       <p class="eyebrow">Psicanalista · Conflitos Humanos</p>
       <h1 class="hero-h1"><span class="h1-nome">Hilda</span><span class="h1-nome">Teixeira</span><span class="h1-nome it">da Costa</span></h1>
       <div class="hero-linha"></div>
-      <p class="hero-pitch">Passei décadas ouvindo histórias de conflito — primeiro como desembargadora, depois como psicanalista. Trabalho com pessoas e organizações que precisam entender o que está em jogo antes de tentar resolver.</p>
-      <p class="hero-sub">Atendimento individual &nbsp;·&nbsp; Intervenção organizacional &nbsp;·&nbsp; Online e presencial</p>
+      <p class="hero-pitch" id="hero-pitch">Passei décadas ouvindo histórias de conflito — primeiro como desembargadora, depois como psicanalista. Trabalho com pessoas e organizações que precisam entender o que está em jogo antes de tentar resolver.</p>
+      <p class="hero-sub" id="hero-sub">Atendimento individual &nbsp;·&nbsp; Intervenção organizacional &nbsp;·&nbsp; Online e presencial</p>
       <div class="hero-ctas">
         <a href="#contato" class="btn btn-terra">Quero uma sessão inicial</a>
         <a href="#servicos" class="btn btn-ghost">Tenho um projeto para minha empresa</a>
@@ -269,13 +269,13 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
     <div class="texto-col">
       <p class="label reveal">Sobre</p>
       <h2 class="h2 reveal">Uma trajetória construída<br>entendendo o ser humano</h2>
-      <p class="corpo reveal">Durante décadas como magistrada no Tribunal de Justiça de Minas Gerais, aprendi que por trás de cada processo havia uma pessoa — com suas contradições, seus vínculos rompidos, sua dor não dita. Casos que chegavam à Justiça eram, na maioria das vezes, conflitos humanos que nunca encontraram outro espaço para existir.</p>
-      <p class="corpo reveal">Essa percepção me levou à psicanálise. Primeiro como curiosidade intelectual. Depois, como vocação. Hoje, ofereço um espaço que poucos analistas podem: a escuta clínica profunda aliada à experiência de quem passou décadas dentro das estruturas de poder, conflito e relação humana.</p>
-      <p class="corpo reveal">Trabalho com pessoas que sofrem nos seus vínculos — do trabalho, da família, do amor — e com organizações que precisam transformar conflito em entendimento antes que ele se torne irreversível.</p>
-      <div class="sobre-box reveal"><p>Como ex-coordenadora de Justiça Restaurativa no TJMG, conduzi processos de mediação e reparação entre partes em conflito real — uma metodologia que incorporo ao trabalho com organizações.</p></div>
+      <p class="corpo reveal" id="sobre-p1">Durante décadas como magistrada no Tribunal de Justiça de Minas Gerais, aprendi que por trás de cada processo havia uma pessoa — com suas contradições, seus vínculos rompidos, sua dor não dita. Casos que chegavam à Justiça eram, na maioria das vezes, conflitos humanos que nunca encontraram outro espaço para existir.</p>
+      <p class="corpo reveal" id="sobre-p2">Essa percepção me levou à psicanálise. Primeiro como curiosidade intelectual. Depois, como vocação. Hoje, ofereço um espaço que poucos analistas podem: a escuta clínica profunda aliada à experiência de quem passou décadas dentro das estruturas de poder, conflito e relação humana.</p>
+      <p class="corpo reveal" id="sobre-p3">Trabalho com pessoas que sofrem nos seus vínculos — do trabalho, da família, do amor — e com organizações que precisam transformar conflito em entendimento antes que ele se torne irreversível.</p>
+      <div class="sobre-box reveal"><p id="sobre-box">Como ex-coordenadora de Justiça Restaurativa no TJMG, conduzi processos de mediação e reparação entre partes em conflito real — uma metodologia que incorporo ao trabalho com organizações.</p></div>
       <ul class="creds reveal">
         <li class="cred-item"><span class="dot"></span><span>Desembargadora aposentada — <strong>TJMG</strong></span></li>
-        <li class="cred-item"><span class="dot"></span><span>Psicóloga · CRP 04/<strong>[PREENCHER]</strong> · FUMEC, 2024</span></li>
+        <li class="cred-item"><span class="dot"></span><span>Psicóloga · CRP 04/<strong class="crp-val">[PREENCHER]</strong> · FUMEC, 2024</span></li>
         <li class="cred-item"><span class="dot"></span><span>Psicanalista · <strong>Escola Brasileira de Psicanálise (EBP)</strong> — instituição de referência nacional, ligada à Associação Mundial de Psicanálise</span></li>
         <li class="cred-item"><span class="dot"></span><span>Doutora · Universidade Federal de Minas Gerais, 2023</span></li>
         <li class="cred-item"><span class="dot"></span><span>Coord. de Justiça Restaurativa · TJMG (até 2025)</span></li>
@@ -288,7 +288,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
   <div class="wrap"><div class="faixa-inner reveal">
     <p class="faixa-kicker">Psicanálise &amp; Conflito</p>
     <div class="faixa-dec"></div>
-    <blockquote class="faixa-q">Psicanálise não é sobre silenciar o que dói.<br>É sobre entender de onde vem — e o que isso revela sobre quem você é.</blockquote>
+    <blockquote class="faixa-q" id="faixa-quote">Psicanálise não é sobre silenciar o que dói.<br>É sobre entender de onde vem — e o que isso revela sobre quem você é.</blockquote>
     <div class="faixa-dec"></div>
   </div></div>
 </section>
@@ -302,17 +302,17 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
       <div class="scard reveal">
         <span class="stag">Atendimento individual</span>
         <div class="scard-ico"><svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"><circle cx="19" cy="12" r="6.5"/><path d="M5 37c0-7.732 6.268-14 14-14s14 6.268 14 14"/></svg></div>
-        <h3 class="scard-h">Atendimento Psicanalítico</h3>
-        <p class="scard-p">Um espaço de escuta onde você pode falar com liberdade sobre o que te pesa — nos vínculos do trabalho, da família, das relações afetivas. A psicanálise não oferece soluções rápidas, mas abre caminhos que a pressa do dia a dia não permite ver.</p>
-        <p class="scard-det">Online ou presencial · Semanal ou quinzenal · Conversa inicial gratuita</p>
+        <h3 class="scard-h" id="s1-titulo">Atendimento Psicanalítico</h3>
+        <p class="scard-p" id="s1-desc">Um espaço de escuta onde você pode falar com liberdade sobre o que te pesa — nos vínculos do trabalho, da família, das relações afetivas. A psicanálise não oferece soluções rápidas, mas abre caminhos que a pressa do dia a dia não permite ver.</p>
+        <p class="scard-det" id="s1-det">Online ou presencial · Semanal ou quinzenal · Conversa inicial gratuita</p>
         <a href="#contato" class="scard-lnk">Agendar sessão inicial <span class="scard-arrow">→</span></a>
       </div>
       <div class="scard dk reveal rd1">
         <span class="stag">Corporativo</span>
         <div class="scard-ico"><svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"><circle cx="12" cy="14" r="5"/><circle cx="26" cy="14" r="5"/><path d="M2 34c0-5.523 4.477-10 10-10s10 4.477 10 10"/><path d="M16 34c0-5.523 4.477-10 10-10s10 4.477 10 10"/></svg></div>
-        <h3 class="scard-h">Intervenção Organizacional</h3>
-        <p class="scard-p">Para empresas e equipes onde o conflito relacional já está comprometendo resultados. Começa com um diagnóstico gratuito — a partir dele, é desenhado um processo de intervenção com escopo, formato e duração adequados à situação. Cada caso é único.</p>
-        <p class="scard-det">Online ou presencial · Escopo e duração definidos no diagnóstico · Diagnóstico inicial gratuito</p>
+        <h3 class="scard-h" id="s2-titulo">Intervenção Organizacional</h3>
+        <p class="scard-p" id="s2-desc">Para empresas e equipes onde o conflito relacional já está comprometendo resultados. Começa com um diagnóstico gratuito — a partir dele, é desenhado um processo de intervenção com escopo, formato e duração adequados à situação. Cada caso é único.</p>
+        <p class="scard-det" id="s2-det">Online ou presencial · Escopo e duração definidos no diagnóstico · Diagnóstico inicial gratuito</p>
         <a href="#contato" class="scard-lnk">Falar sobre o projeto <span class="scard-arrow">→</span></a>
       </div>
     </div>
@@ -415,14 +415,14 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
   <div class="wrap">
     <p class="label c reveal">Contato</p>
     <h2 class="h2 c reveal">Vamos conversar?</h2>
-    <p class="contato-sub reveal">A primeira conversa é gratuita e sem compromisso. Escolha o melhor horário na agenda — ou envie uma mensagem e responderei em até 24 horas.</p>
+    <p class="contato-sub reveal" id="contato-sub">A primeira conversa é gratuita e sem compromisso. Escolha o melhor horário na agenda — ou envie uma mensagem e responderei em até 24 horas.</p>
     <div class="contato-grid">
       <div class="reveal">
         <h3 class="col-h">Agende diretamente</h3>
         <p class="col-sub">Conversa inicial · 20 minutos · Gratuita</p>
-        <div class="cal-wrap"><iframe src="https://cal.com/hildateixeiracosta?embed=true&theme=light" width="100%" height="500" frameborder="0" title="Agenda" loading="lazy"></iframe></div>
+        <div class="cal-wrap"><iframe src="https://cal.com/hildateixeiracosta?embed=true&theme=light" width="100%" height="500" frameborder="0" title="Agenda" id="cal-iframe" loading="lazy"></iframe></div>
         <p class="cal-nota">Substituir pelo link real após criar conta em <a href="https://cal.com" target="_blank" rel="noopener">cal.com</a></p>
-        <a href="https://wa.me/5531999999999?text=Ol%C3%A1%20Hilda%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20seu%20trabalho." class="wpp-link" target="_blank" rel="noopener">
+        <a href="https://wa.me/5531999999999?text=Ol%C3%A1%20Hilda%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20seu%20trabalho." class="wpp-link" id="wpp-link" target="_blank" rel="noopener">
           <svg class="wpp-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 0C4.477 0 0 4.477 0 10c0 1.764.462 3.42 1.27 4.862L0 20l5.293-1.243A9.96 9.96 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm5.07 14.212c-.21.59-1.23 1.13-1.69 1.193-.456.06-1.016.085-1.638-.102-.378-.116-.863-.272-1.482-.532-2.607-1.063-4.308-3.694-4.44-3.867-.13-.172-1.06-1.408-1.06-2.685s.67-1.9.908-2.16c.237-.257.517-.322.69-.322.172 0 .344.001.495.008.158.007.37-.06.58.443.21.503.712 1.739.774 1.865.062.126.103.273.02.44-.082.168-.124.272-.247.419-.123.147-.258.328-.369.44-.122.124-.249.259-.107.508.143.248.633 1.044 1.358 1.691.932.831 1.72 1.088 1.965 1.21.245.122.387.103.53-.062.143-.164.612-.714.775-.96.163-.245.326-.204.55-.122.224.082 1.42.669 1.664.791.244.123.407.184.466.286.06.102.06.594-.15 1.184z"/></svg>
           Prefere WhatsApp? Clique aqui
         </a>
@@ -448,8 +448,8 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
 <footer class="footer">
   <div class="wrap">
     <div class="footer-top">
-      <div><p class="f-nome">Hilda Teixeira da Costa</p><p class="f-tag">Psicanalista · Conflitos Humanos</p><div class="f-sep"></div><p class="f-crp">CRP 04/<strong>[PREENCHER]</strong> · Psicóloga<br>Psicanalista EBP · Belo Horizonte, MG</p></div>
-      <div><p class="f-col-h">Contato</p><a href="mailto:hilda@hildateixeiradacosta.com.br" class="f-email">hilda@hildateixeiradacosta.com.br</a><p class="f-local">Atendimento online e presencial<br>Belo Horizonte, MG</p></div>
+      <div><p class="f-nome">Hilda Teixeira da Costa</p><p class="f-tag">Psicanalista · Conflitos Humanos</p><div class="f-sep"></div><p class="f-crp">CRP 04/<strong class="crp-val">[PREENCHER]</strong> · Psicóloga<br>Psicanalista EBP · Belo Horizonte, MG</p></div>
+      <div><p class="f-col-h">Contato</p><a href="mailto:hilda@hildateixeiradacosta.com.br" class="f-email email-link">hilda@hildateixeiradacosta.com.br</a><p class="f-local">Atendimento online e presencial<br>Belo Horizonte, MG</p></div>
       <div><p class="f-col-h">Ética &amp; Sigilo</p><p class="f-etica">Todos os atendimentos seguem o Código de Ética do CFP — Resolução n.º 001/2009 e normas complementares.</p></div>
     </div>
     <div class="footer-bot"><p>© <span id="ano"></span> Hilda Teixeira da Costa. Todos os direitos reservados.</p><a href="https://www.linkedin.com/in/hilda-teixeira-da-costa-89479545/" target="_blank" rel="noopener">LinkedIn</a></div>
@@ -460,6 +460,23 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
 document.addEventListener('DOMContentLoaded',function(){
   const nav=document.getElementById('nav');
   window.addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40),{passive:true});
+
+  // Carrega conteúdo editável
+  fetch('/content.json').then(r=>r.ok?r.json():null).then(d=>{
+    if(!d)return;
+    const s=(id,v)=>{const e=document.getElementById(id);if(e&&v!==undefined)e.textContent=v;};
+    s('hero-pitch',d.hero_pitch); s('hero-sub',d.hero_sub);
+    s('sobre-p1',d.sobre_p1); s('sobre-p2',d.sobre_p2); s('sobre-p3',d.sobre_p3);
+    s('sobre-box',d.sobre_box); s('faixa-quote',d.faixa_quote);
+    s('s1-titulo',d.servico1_titulo); s('s1-desc',d.servico1_desc); s('s1-det',d.servico1_det);
+    s('s2-titulo',d.servico2_titulo); s('s2-desc',d.servico2_desc); s('s2-det',d.servico2_det);
+    s('contato-sub',d.contato_sub);
+    if(d.crp)document.querySelectorAll('.crp-val').forEach(e=>e.textContent=d.crp);
+    if(d.email)document.querySelectorAll('.email-link').forEach(e=>{e.href='mailto:'+d.email;e.textContent=d.email;});
+    if(d.whatsapp){const w=document.getElementById('wpp-link');if(w)w.href='https://wa.me/'+d.whatsapp+'?text=Ol%C3%A1%20Hilda%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20seu%20trabalho.';}
+    if(d.calcom_username){const c=document.getElementById('cal-iframe');if(c)c.src='https://cal.com/'+d.calcom_username+'?embed=true&theme=light';}
+  }).catch(()=>{});
+
   const burger=document.getElementById('burger'),menu=document.getElementById('menu');
   burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.classList.toggle('x',o);burger.setAttribute('aria-expanded',o);});
   menu.querySelectorAll('.nav-a').forEach(l=>l.addEventListener('click',()=>{menu.classList.remove('open');burger.classList.remove('x');burger.setAttribute('aria-expanded','false');}));
@@ -476,6 +493,22 @@ document.addEventListener('DOMContentLoaded',function(){
   const y=document.getElementById('ano');if(y)y.textContent=new Date().getFullYear();
   const form=document.getElementById('contact-form'),succ=document.getElementById('form-success'),btn=document.getElementById('submit-btn');
   if(form)form.addEventListener('submit',()=>{btn.textContent='Enviando…';btn.disabled=true;setTimeout(()=>{if(succ)succ.style.display='block';},1200);});
+  // Carrega conteúdo editável
+  fetch('/content.json').then(r=>r.ok?r.json():null).then(d=>{
+    if(!d)return;
+    const s=(id,v)=>{const e=document.getElementById(id);if(e&&v!==undefined)e.textContent=v;};
+    s('hero-pitch',d.hero_pitch); s('hero-sub',d.hero_sub);
+    s('sobre-p1',d.sobre_p1); s('sobre-p2',d.sobre_p2); s('sobre-p3',d.sobre_p3);
+    s('sobre-box',d.sobre_box); s('faixa-quote',d.faixa_quote);
+    s('s1-titulo',d.servico1_titulo); s('s1-desc',d.servico1_desc); s('s1-det',d.servico1_det);
+    s('s2-titulo',d.servico2_titulo); s('s2-desc',d.servico2_desc); s('s2-det',d.servico2_det);
+    s('contato-sub',d.contato_sub);
+    if(d.crp)document.querySelectorAll('.crp-val').forEach(e=>e.textContent=d.crp);
+    if(d.email)document.querySelectorAll('.email-link').forEach(e=>{e.href='mailto:'+d.email;e.textContent=d.email;});
+    if(d.whatsapp){const w=document.getElementById('wpp-link');if(w)w.href='https://wa.me/'+d.whatsapp+'?text=Ol%C3%A1%20Hilda%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20seu%20trabalho.';}
+    if(d.calcom_username){const c=document.getElementById('cal-iframe');if(c)c.src='https://cal.com/'+d.calcom_username+'?embed=true&theme=light';}
+  }).catch(()=>{});
+
 });
 </script>
 </body>
