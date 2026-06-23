@@ -271,7 +271,7 @@ async function carregarConteudo() {
       headers: { 'Authorization': `token ${cfg.token}`, 'Accept': 'application/vnd.github.v3+json' }
     });
     const data = await r.json();
-    const content = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    const content = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
     preencherFormulario(content);
     setStatus('Conteúdo carregado ✓');
     setTimeout(() => setStatus(''), 3000);
