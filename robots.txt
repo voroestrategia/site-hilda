@@ -1,0 +1,6 @@
+# robots.txt — hildateixeiradacosta.com.br
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://hildateixeiradacosta.com.br/sitemap.xml
