@@ -1,0 +1,13 @@
+# Redirects 301 — slugs antigos (post-XX) para slugs semânticos
+# Preserva link juice e qualquer backlink externo que aponte pros antigos
+
+/blog/post-01  /blog/psicanalise-ou-psicoterapia  301
+/blog/post-02  /blog/primeira-sessao-psicanalista  301
+/blog/post-03  /blog/psicanalise-para-executivos  301
+/blog/post-04  /blog/conflito-entre-socios  301
+/blog/post-05  /blog/equipes-em-crise  301
+/blog/post-06  /blog/justica-restaurativa-empresas  301
+/blog/post-07  /blog/escuta-psicanalitica  301
+/blog/post-08  /blog/mal-estar-no-trabalho  301
+/blog/post-09  /blog/vinculos-que-adoecem  301
+/blog/post-10  /blog/custo-do-conflito-organizacional  301
