@@ -15,7 +15,7 @@
   "servico1_det": "Online ou presencial · Sessões de 40 min (individual) ou 60 min (casais) · Semanal ou quinzenal",
   "servico1_wpp": "Olá, Hilda. Vim pelo seu site e tenho interesse em conversar sobre atendimento clínico (individual ou de casal).",
   "servico2_titulo": "Mediação",
-  "servico2_desc": "Quando duas ou mais partes estão em conflito — familiar, patrimonial, entre sócios ou no trabalho — o caminho jurídico nem sempre é o melhor primeiro passo. A mediação é um processo estruturado que ajuda as pessoas a conversarem com segurança, entenderem o que está em jogo e chegarem a um acordo que faça sentido para todas.",
+  "servico2_desc": "Quando duas ou mais partes estão em conflito — familiar, patrimonial, entre sócios ou no trabalho — o caminho jurídico nem sempre é o melhor primeiro passo. A mediação é um processo estruturado que ajuda as pessoas a conversarem com segurança, entenderem o que está em jogo e chegarem a um acordo que faça sentido para todas. Também atuo como membro independente e resolutivo em conselhos de família, quando uma voz externa — com voto — ajuda a destravar decisões sobre patrimônio, sucessão e governança.",
   "servico2_det": "Sob demanda · Online ou presencial · Conversa inicial sem custo",
   "servico2_wpp": "Olá, Hilda. Vim pelo seu site e gostaria de conversar sobre um processo de mediação.",
   "servico3_titulo": "Justiça Restaurativa",
@@ -38,7 +38,8 @@
     "Conflitos entre sócios ou entre líderes",
     "Equipes com ruptura relacional profunda",
     "Reintegração após afastamento ou crise interna",
-    "Mediação estruturada entre partes em tensão"
+    "Mediação estruturada entre partes em tensão",
+    "Famílias empresárias em questões de sucessão, patrimônio ou governança"
   ],
   "pq3_tag": "Grupos e casais",
   "pq3_titulo": "Para vínculos que precisam ser entendidos antes de serem resolvidos",
