@@ -501,6 +501,63 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-st
   </div>
 </section>
 
+<section class="fer-home" id="ferramentas">
+  <style>
+    .fer-home{background:var(--fundo);padding:120px 0;position:relative}
+    .fer-sub{font-size:16px;line-height:1.8;color:var(--cinza);font-weight:300;text-align:center;max-width:620px;margin:-20px auto 48px}
+    .fer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:960px;margin:0 auto}
+    .fer-card{background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:32px 30px 24px;transition:box-shadow var(--tr),transform var(--tr),border-color var(--tr);display:flex;flex-direction:column;text-decoration:none;color:inherit;position:relative;overflow:hidden}
+    .fer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+    .fer-card:hover{box-shadow:0 20px 60px rgba(44,62,80,.1);transform:translateY(-5px);border-color:rgba(192,132,90,.3)}
+    .fer-card:hover::before{transform:scaleX(1)}
+    .fer-tag{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
+    .fer-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--terra)}
+    .fer-titulo{font-family:var(--ft);font-size:21px;font-weight:500;color:var(--azul);line-height:1.3;margin-bottom:12px;letter-spacing:-.2px}
+    .fer-desc{font-size:14px;font-weight:300;color:var(--cinza);line-height:1.7;flex-grow:1;margin-bottom:18px}
+    .fer-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--borda)}
+    .fer-tempo{font-size:11px;color:var(--cinza);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+    .fer-link{font-size:13px;font-weight:600;color:var(--terra-dk);display:inline-flex;align-items:center;gap:6px}
+    .fer-link::after{content:'→';transition:transform var(--tr)}
+    .fer-card:hover .fer-link::after{transform:translateX(3px)}
+    .fer-footer-cta{text-align:center;margin-top:44px}
+    .fer-footer-cta a{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--azul);font-weight:600;letter-spacing:.3px;border-bottom:1px solid var(--borda);padding-bottom:3px;transition:border-color var(--tr),color var(--tr)}
+    .fer-footer-cta a:hover{color:var(--terra);border-color:var(--terra)}
+    @media(max-width:768px){.fer-home{padding:72px 0}.fer-grid{grid-template-columns:1fr;gap:18px}.fer-card{padding:26px 22px 20px}}
+  </style>
+  <div class="wrap">
+    <p class="label c reveal">Ferramentas gratuitas</p>
+    <h2 class="h2 c reveal">Instrumentos práticos antes de qualquer conversa</h2>
+    <p class="fer-sub reveal">Quatro ferramentas construídas a partir de décadas no Judiciário e na clínica. Respondem rápido, com números e critérios — para empresas, pessoas e famílias que precisam de clareza antes de decidir.</p>
+    <div class="fer-grid">
+      <a href="/ferramentas/custo-do-conflito" class="fer-card reveal">
+        <span class="fer-tag"><span class="fer-tag-dot"></span>Para empresas</span>
+        <h3 class="fer-titulo">Quanto está te custando o conflito?</h3>
+        <p class="fer-desc">Estime em R$ o custo real de um conflito entre sócios, de uma equipe adoecida ou de uma liderança em crise — com comparativo com mediação.</p>
+        <div class="fer-footer"><span class="fer-tempo">≈ 2 min · Calculadora</span><span class="fer-link">Abrir</span></div>
+      </a>
+      <a href="/ferramentas/esta-na-hora" class="fer-card reveal rd1">
+        <span class="fer-tag"><span class="fer-tag-dot"></span>Para você</span>
+        <h3 class="fer-titulo">Está na hora de procurar ajuda?</h3>
+        <p class="fer-desc">Doze perguntas para entender se o que você vive pede avaliação psiquiátrica, psicoterapia focada ou uma escuta mais profunda.</p>
+        <div class="fer-footer"><span class="fer-tempo">≈ 3 min · Autoavaliação</span><span class="fer-link">Fazer</span></div>
+      </a>
+      <a href="/ferramentas/checklist-nr1" class="fer-card reveal rd2">
+        <span class="fer-tag"><span class="fer-tag-dot"></span>Para empresas</span>
+        <h3 class="fer-titulo">Checklist NR-1 personalizado</h3>
+        <p class="fer-desc">A fiscalização punitiva dos riscos psicossociais começa em 26 de maio de 2026. Em 2 minutos, veja o que ainda falta na sua empresa.</p>
+        <div class="fer-footer"><span class="fer-tempo">≈ 2 min · Checklist</span><span class="fer-link">Gerar</span></div>
+      </a>
+      <a href="/ferramentas/roi-mediacao" class="fer-card reveal rd3">
+        <span class="fer-tag"><span class="fer-tag-dot"></span>Comparativo</span>
+        <h3 class="fer-titulo">Mediação ou processo: o que sai mais caro?</h3>
+        <p class="fer-desc">Preencha o valor da causa, o tempo em tribunal e os honorários — veja a comparação completa entre Judiciário e mediação, com números.</p>
+        <div class="fer-footer"><span class="fer-tempo">≈ 2 min · Comparativo</span><span class="fer-link">Comparar</span></div>
+      </a>
+    </div>
+    <p class="fer-footer-cta reveal"><a href="/ferramentas/">Ver todas as ferramentas</a></p>
+  </div>
+</section>
+
 <section class="contato" id="contato">
   <div class="wrap">
     <p class="label c reveal">Contato</p>
